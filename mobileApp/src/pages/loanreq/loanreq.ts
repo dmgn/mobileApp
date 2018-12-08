@@ -1,9 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VerifyPage } from '../verify/verify';
 
 /**
- * Generated class for the StartPage page.
+ * Generated class for the LoanreqPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { VerifyPage } from '../verify/verify';
 
 @IonicPage()
 @Component({
-  selector: 'page-start',
-  templateUrl: 'start.html',
+  selector: 'page-loanreq',
+  templateUrl: 'loanreq.html',
 })
-export class StartPage {
+export class LoanreqPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StartPage');
-  }
-
-  openVerifyPage(){
-    this.navCtrl.push(VerifyPage);
+    console.log('ionViewDidLoad LoanreqPage');
   }
 
 }

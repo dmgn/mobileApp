@@ -3,14 +3,26 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
+
+  style="background-color:rgb(51, 167, 245)"
 -->
 <ion-header>
-    <ion-toolbar>
-      <ion-title>Verify</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Verification Code</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 
 <ion-content padding>
-
+  <p>We just sent you sms with a token code to <a>Change your number</a></p>
+  <ion-list>
+    <ion-item>      
+      <ion-input type="text" placeholder="Code"></ion-input>
+    </ion-item>      
+  </ion-list>
+  <p>Haven't received the token?</p>
+  <p><a>Resend verification token</a></p>
+  <div style="display: flex; justify-content: center;">
+    <button ion-button>Verify</button>
+  </div>
 </ion-content>
