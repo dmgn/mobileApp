@@ -1,3 +1,4 @@
+import { SalacctverificationPage } from './../pages/salacctverification/salacctverification';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -9,13 +10,19 @@ import { HomePage } from '../pages/home/home';
 import { StartPage } from '../pages/start/start';
 import { VerifyPage } from '../pages/verify/verify';
 import { LoanreqPage } from '../pages/loanreq/loanreq';
+import { IdentityPage } from '../pages/identity/identity';
+import { IdentityverificationPage } from '../pages/identityverification/identityverification';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     StartPage,
     VerifyPage,
-    LoanreqPage
+    LoanreqPage,
+    IdentityPage,
+    IdentityverificationPage,
+    SalacctverificationPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,10 @@ import { LoanreqPage } from '../pages/loanreq/loanreq';
     HomePage,
     StartPage,
     VerifyPage,
-    LoanreqPage
+    LoanreqPage,
+    IdentityPage,
+    IdentityverificationPage,
+    SalacctverificationPage
   ],
   providers: [
     StatusBar,
