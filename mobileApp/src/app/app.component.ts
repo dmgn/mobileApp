@@ -17,7 +17,7 @@ import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalcon
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = StartPage;
+  rootPage:any = IdentityverificationPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
