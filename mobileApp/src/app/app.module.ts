@@ -1,3 +1,5 @@
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication';
+
 import { AppevaluationPage } from './../pages/appevaluation/appevaluation';
 import { AddrandemploymentPage } from './../pages/addrandemployment/addrandemployment';
 import { AddrempverificationPage } from './../pages/addrempverification/addrempverification';
@@ -16,6 +18,19 @@ import { LoanreqPage } from '../pages/loanreq/loanreq';
 import { IdentityPage } from '../pages/identity/identity';
 import { IdentityverificationPage } from '../pages/identityverification/identityverification';
 import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalconfirmation';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { Firebase } from '@ionic-native/firebase/ngx';
+
+
+const firebaseAuth = {
+  apiKey: "AIzaSyBBuSxVcDmmAuZ4WhxEEyTkWSilfqbgKjE",
+  authDomain: "mobileapp1-dc6ff.firebaseapp.com",
+  databaseURL: "https://mobileapp1-dc6ff.firebaseio.com",
+  projectId: "mobileapp1-dc6ff",
+  storageBucket: "mobileapp1-dc6ff.appspot.com",
+  messagingSenderId: "658644714320"
+}
 
 @NgModule({
   declarations: [
@@ -34,7 +49,10 @@ import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalcon
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,6 +72,8 @@ import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalcon
   providers: [
     StatusBar,
     SplashScreen,
+    Firebase,
+    FirebaseAuthentication,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
