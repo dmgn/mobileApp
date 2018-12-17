@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "658644714320",
+    "firebase_url": "https://mobileapp1-dc6ff.firebaseio.com",
+    "project_id": "mobileapp1-dc6ff",
+    "storage_bucket": "mobileapp1-dc6ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658644714320:android:5625108d6aa3c23a",
+        "android_client_info": {
+          "package_name": "com.digibank.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658644714320-pcaemc200oa7fq2ds3ad3pui7lu0pigf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibank.mobileapp",
+            "certificate_hash": "64ece57befd3a19de226566a07a1a4f57eade0a2"
+          }
+        },
+        {
+          "client_id": "658644714320-eupg2gprqcj7uao33ivjbgs8p2v0r6rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChzwL3eTreDsK8YeKWlpaEts0T0SMkQNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658644714320-eupg2gprqcj7uao33ivjbgs8p2v0r6rl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
