@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IdentityPage } from '../identity/identity';
 
 /**
  * Generated class for the LoanreqPage page.
@@ -22,4 +23,7 @@ export class LoanreqPage {
     console.log('ionViewDidLoad LoanreqPage');
   }
 
+  openIdentityPage(){
+    this.navCtrl.push(IdentityPage);
+  }
 }

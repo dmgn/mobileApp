@@ -34,6 +34,7 @@ export class StartPage {
 
   sendSMS(){
     console.log("Inside sendSMS");
+    /**
     this.firebaseAuthentication.verifyPhoneNumber(this.phone.value, 60).
     then( (res: any)=>{
        alert("SMS sent successfully");
@@ -41,16 +42,7 @@ export class StartPage {
     })
     .catch((error: any) => {
       console.error(error)
-    });
-    /**console.log("Inside sendSMS");
-    (<any>window).FirebasePlugin.verifyPhoneNumber(8579283815, 60, (credential)=>{
-      alert("SMS sent successfully");
-      console.log(credential);
-      this.verificationId = credential.verificationId;
-    },
-    function(error){
-      console.error(error);
-    });*/
+    }); */
     console.log("Exiting sendSMS");
   }
 

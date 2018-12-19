@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, SelectPopover } from 'ionic-angular';
 
 /**
  * Generated class for the IdentityverificationPage page.
@@ -15,11 +15,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class IdentityverificationPage {
 
+  data: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad IdentityverificationPage');
+    this.navParams.get("callbackResponse").
+    subscribe(data => { 
+      sleep(3000);
+      this.data = data;
+       console.log(data);
+     } )
+
+
+const sleep = ( ms ) => {
+    const end = +(new Date()) + ms;
+    while( +(new Date()) < end ){ } 
+}
+  
   }
 
 }

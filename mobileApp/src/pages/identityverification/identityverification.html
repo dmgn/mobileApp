@@ -29,8 +29,8 @@
     </ion-item>
     
     <ion-item >
-      <div class=loading>
-        <ion-spinner name=bubbles>
+      <div class=loading *ngIf=!data>
+        <ion-spinner name="bubbles" >
         </ion-spinner>
       </div>  
     </ion-item>
@@ -42,7 +42,7 @@
     </ion-item>
     <ion-item >
       <div>    
-          <button ion-button style="float:right" disabled>Continue</button>
+          <button ion-button style="float:right" [disabled]=!data >Continue</button>
       </div>
     </ion-item>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoanreqPage } from '../loanreq/loanreq';
 
 /**
  * Generated class for the VerifyPage page.
@@ -22,4 +23,7 @@ export class VerifyPage {
     console.log('ionViewDidLoad VerifyPage');
   }
 
+  openLoanReqPage(){
+    this.navCtrl.push(LoanreqPage);
+  }
 }

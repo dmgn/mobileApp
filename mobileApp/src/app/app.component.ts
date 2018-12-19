@@ -16,7 +16,7 @@ import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalcon
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class Digibank {
   rootPage:any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

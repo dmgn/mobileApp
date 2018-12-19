@@ -1,5 +1,6 @@
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication';
-
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppevaluationPage } from './../pages/appevaluation/appevaluation';
 import { AddrandemploymentPage } from './../pages/addrandemployment/addrandemployment';
 import { AddrempverificationPage } from './../pages/addrempverification/addrempverification';
@@ -10,7 +11,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
+import { Digibank } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StartPage } from '../pages/start/start';
 import { VerifyPage } from '../pages/verify/verify';
@@ -21,6 +22,7 @@ import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalcon
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Firebase } from '@ionic-native/firebase/ngx';
+import { MessageService } from '../providers/message-service/message-service';
 
 
 const firebaseAuth = {
@@ -34,7 +36,7 @@ const firebaseAuth = {
 
 @NgModule({
   declarations: [
-    MyApp,
+    Digibank,
     HomePage,
     StartPage,
     VerifyPage,
@@ -49,14 +51,15 @@ const firebaseAuth = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    
+    IonicModule.forRoot(Digibank),    
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    Digibank,
     HomePage,
     StartPage,
     VerifyPage,
@@ -74,7 +77,8 @@ const firebaseAuth = {
     SplashScreen,
     Firebase,
     FirebaseAuthentication,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MessageService
   ]
 })
 export class AppModule {}
