@@ -16,23 +16,37 @@
 <ion-content padding>
 
   <ion-list no-lines>
-    <ion-item>
-      We are verifying your Address and Employment
+
+  <ion-item>
+
+  </ion-item>
+  <ion-item style="font-size:x-large" *ngIf=!data>
+      We are verifying your Address
+      and Employment
+  </ion-item>
+  <ion-item style="font-size:x-large" *ngIf=data>  
+      Address and Employment details
+      are verified.
   </ion-item>
   <ion-item>
-      <div class=loading>
+
+  </ion-item>
+  <ion-item>
+
+  </ion-item>
+  <ion-item>
+      <div class=loading *ngIf=!data>
         <ion-spinner name=bubbles>
         </ion-spinner>
       </div>  
-    </ion-item>
-    <ion-item>
-      <div>    
-          <button ion-button style="float:right" disabled>Continue</button>
-      </div>
-    </ion-item>
+  </ion-item>
     
 
-  </ion-list>
+</ion-list>
+      <div>    
+          <button ion-button style="float:right" (click)="showAppEvalPage()" [disabled]=!data>Continue</button>
+      </div>
+
 
 
 </ion-content>

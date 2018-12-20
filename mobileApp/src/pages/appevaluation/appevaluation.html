@@ -16,20 +16,22 @@
 <ion-content padding>
 
   <ion-list no-lines> 
-    <ion-item>
+    <ion-item *ngIf=!data>
       Your address and employment has been checked out.<br>
       Your application is now being evaluated.
     </ion-item>
+    <ion-item *ngIf=data>
+        Application evaluation is complete.
+      </ion-item>
     <ion-item>
       <div class=loading>
-        <ion-spinner name=bubbles>
+        <ion-spinner name=bubbles *ngIf=!data>
         </ion-spinner>
       </div>  
     </ion-item>
-    <ion-item>
-      <div>    
-          <button ion-button style="float:right" >Continue</button>
-      </div>
-    </ion-item>
   </ion-list>
+      <div>    
+          <button ion-button style="float:right" (click)="showAppEvalConfirmationPage()" [disabled]=!data>Continue</button>
+      </div>
+  
 </ion-content>

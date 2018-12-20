@@ -18,9 +18,15 @@
     <ion-item  >
 
     </ion-item>
-    <ion-item style="font-size:x-large">  
+    <ion-item style="font-size:x-large" *ngIf=!data>  
       We are verifying your identity
     </ion-item>
+
+    <ion-item style="font-size:x-large" *ngIf=data>  
+      Your identity is verified.
+    </ion-item>
+
+
     <ion-item  >
 
     </ion-item>
@@ -40,14 +46,10 @@
     <ion-item >
 
     </ion-item>
-    <ion-item >
+  </ion-list> 
       <div>    
-          <button ion-button style="float:right" [disabled]=!data >Continue</button>
+          <button ion-button style="float:right" [disabled]=!data (click)="addrandemppage()">Continue</button>
       </div>
-    </ion-item>
-
-</ion-list>
-
-</ion-content>
+ </ion-content>
 
 

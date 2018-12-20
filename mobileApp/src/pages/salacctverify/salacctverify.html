@@ -1,0 +1,29 @@
+<!--
+  Generated template for the SalacctverifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Salary Acct Verification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content><ion-content padding>
+    <p style="font-size:large">We just credited your account with a small amount. Please verify.</p>
+    <ion-list no-lines>
+      <ion-item>
+          <ion-label floating>Enter the credited amount</ion-label>
+          <ion-input type="text" #creditedAmount></ion-input>
+      </ion-item>   
+    </ion-list>
+    <div>    
+        <button ion-button style="float:right" (click)="showSalAcctVerificationPage()">Verify</button>
+    </div>
+ </ion-content>

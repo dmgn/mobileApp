@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EsignPage } from '../esign/esign';
 
 /**
- * Generated class for the AppevalconfirmationPage page.
+ * Generated class for the SalacctconfirmationPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,24 +10,16 @@ import { EsignPage } from '../esign/esign';
 
 @IonicPage()
 @Component({
-  selector: 'page-appevalconfirmation',
-  templateUrl: 'appevalconfirmation.html',
+  selector: 'page-salacctconfirmation',
+  templateUrl: 'salacctconfirmation.html',
 })
-export class AppevalconfirmationPage {
-
-  data : any;
+export class SalacctconfirmationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AppevalconfirmationPage');
+    console.log('ionViewDidLoad SalacctconfirmationPage');
   }
-
-  showEsignPage(){
-    this.navCtrl.push(EsignPage);
-  }
-
 
 }

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EsignPage } from '../esign/esign';
+import { LoanfundedPage } from '../loanfunded/loanfunded';
 
 /**
- * Generated class for the AppevalconfirmationPage page.
+ * Generated class for the EmirepaymentsetupPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,24 +11,19 @@ import { EsignPage } from '../esign/esign';
 
 @IonicPage()
 @Component({
-  selector: 'page-appevalconfirmation',
-  templateUrl: 'appevalconfirmation.html',
+  selector: 'page-emirepaymentsetup',
+  templateUrl: 'emirepaymentsetup.html',
 })
-export class AppevalconfirmationPage {
-
-  data : any;
+export class EmirepaymentsetupPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AppevalconfirmationPage');
+    console.log('ionViewDidLoad EmirepaymentsetupPage');
   }
 
-  showEsignPage(){
-    this.navCtrl.push(EsignPage);
+  showLoanFundedPage(){
+    this.navCtrl.push(LoanfundedPage);
   }
-
-
 }

@@ -1,5 +1,8 @@
+import { MessageService } from './../../providers/message-service/message-service';
+import { AppevaluationPage } from './../appevaluation/appevaluation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Observable } from 'rxjs';
 
 /**
  * Generated class for the AddrempverificationPage page.
@@ -15,11 +18,43 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddrempverificationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data : any;
+  responseData : Observable<any>
+
+  constructor(private msgSvc : MessageService, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddrempverificationPage');
+    //console.log('ionViewDidLoad AddrempverificationPage');
   }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidLoad AddrempverificationPage');
+    this.navParams.get("callbackResponse").
+    subscribe(data => { 
+      sleep(3000);
+      this.data = data;
+       console.log(data);
+     } )
+
+
+  const sleep = ( ms ) => {
+      const end = +(new Date()) + ms;
+      while( +(new Date()) < end ){ } 
+  }
+  
+  }
+
+  showAppEvalPage(){
+    this.responseData = this.sendRequest()
+    console.log(this.responseData.map((res :Response) => console.log(res.json())));
+    this.navCtrl.push(AppevaluationPage, {
+      callbackResponse : this.responseData
+    });
+  }
+
+  sendRequest(){
+     return this.msgSvc.getMessages(); 
+   }
 
 }

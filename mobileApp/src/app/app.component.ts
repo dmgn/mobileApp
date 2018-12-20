@@ -13,6 +13,8 @@ import { LoanreqPage } from '../pages/loanreq/loanreq';
 import { IdentityPage } from '../pages/identity/identity';
 import { IdentityverificationPage } from '../pages/identityverification/identityverification';
 import { AppevalconfirmationPage } from '../pages/appevalconfirmation/appevalconfirmation';
+import { LoanfundedPage } from '../pages/loanfunded/loanfunded';
+import { SalacctsetupPage } from '../pages/salacctsetup/salacctsetup';
 @Component({
   templateUrl: 'app.html'
 })

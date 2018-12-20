@@ -1,3 +1,4 @@
+import { AddrandemploymentPage } from './../addrandemployment/addrandemployment';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, SelectPopover } from 'ionic-angular';
 
@@ -29,11 +30,15 @@ export class IdentityverificationPage {
      } )
 
 
-const sleep = ( ms ) => {
-    const end = +(new Date()) + ms;
-    while( +(new Date()) < end ){ } 
-}
+  const sleep = ( ms ) => {
+      const end = +(new Date()) + ms;
+      while( +(new Date()) < end ){ } 
+  }
   
+  }
+
+  addrandemppage(){
+    this.navCtrl.push(AddrandemploymentPage);
   }
 
 }

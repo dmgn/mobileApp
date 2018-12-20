@@ -6,30 +6,48 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Salary Account Verification</ion-title>
+  <ion-navbar>    
+    <ion-title>Salary Acct Verification</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
     <ion-list no-lines>
-      <ion-item>  
-        We are verifying your Salary Account.
-      </ion-item>
-      <ion-item>
-        <div class=loading>
-            <ion-spinner name=bubbles>
-              </ion-spinner>
-        </div>
-      </ion-item>
-      <ion-item>
-        <div>    
-            <button ion-button style="float:right" disabled>Next</button>
-        </div>
-      </ion-item>
+      <ion-item  >
   
-  </ion-list>
-
-  </ion-content>
+      </ion-item>
+      <p style="font-size:x-large" *ngIf=!data>  
+        We are verifying your salary account...
+      </p>
+  
+      <p style="font-size:x-large" *ngIf=data>  
+        Your salary account is now verified.
+      </p>
+  
+  
+      <ion-item>
+  
+      </ion-item>
+      <ion-item >
+  
+      </ion-item>
+      
+      <ion-item >
+        <div class=loading *ngIf=!data>
+          <ion-spinner name="bubbles" >
+          </ion-spinner>
+        </div>  
+      </ion-item>
+      <ion-item >
+  
+      </ion-item>
+      <ion-item >
+  
+      </ion-item>
+    </ion-list> 
+        <div>    
+            <button ion-button style="float:right" [disabled]=!data (click)="showInitEmiRepaymentSetupPage()">Next</button>
+        </div>
+   </ion-content>
 

@@ -23,6 +23,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { MessageService } from '../providers/message-service/message-service';
+import { LoanfundedPage } from '../pages/loanfunded/loanfunded';
+import { EmirepaymentsetupPage } from '../pages/emirepaymentsetup/emirepaymentsetup';
+import { InitemirepaymentPage } from '../pages/initemirepayment/initemirepayment';
+import { SalacctsetupPage } from '../pages/salacctsetup/salacctsetup';
+import { SalacctconfirmationPage } from '../pages/salacctconfirmation/salacctconfirmation';
+import { EsignPage } from '../pages/esign/esign';
+import { SalacctverifyPage } from '../pages/salacctverify/salacctverify';
 
 
 const firebaseAuth = {
@@ -43,11 +50,19 @@ const firebaseAuth = {
     LoanreqPage,
     IdentityPage,
     IdentityverificationPage,
-    SalacctverificationPage,
+    EsignPage,
     AddrempverificationPage,
     AddrandemploymentPage,
     AppevaluationPage,
-    AppevalconfirmationPage
+    AppevalconfirmationPage,
+    InitemirepaymentPage,
+    SalacctsetupPage,
+    SalacctverifyPage,
+    SalacctverificationPage,
+    SalacctconfirmationPage,
+    InitemirepaymentPage,
+    EmirepaymentsetupPage,
+    LoanfundedPage
   ],
   imports: [
     BrowserModule,
@@ -66,11 +81,20 @@ const firebaseAuth = {
     LoanreqPage,
     IdentityPage,
     IdentityverificationPage,
+    EsignPage,
     SalacctverificationPage,
     AddrempverificationPage,
     AddrandemploymentPage,
     AppevaluationPage,
-    AppevalconfirmationPage
+    AppevalconfirmationPage,
+    InitemirepaymentPage,
+    SalacctsetupPage,
+    SalacctverifyPage,
+    SalacctverificationPage,
+    SalacctconfirmationPage,
+    InitemirepaymentPage,
+    EmirepaymentsetupPage,
+    LoanfundedPage
   ],
   providers: [
     StatusBar,
