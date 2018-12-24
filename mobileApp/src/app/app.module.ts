@@ -30,9 +30,13 @@ import { SalacctsetupPage } from '../pages/salacctsetup/salacctsetup';
 import { SalacctconfirmationPage } from '../pages/salacctconfirmation/salacctconfirmation';
 import { EsignPage } from '../pages/esign/esign';
 import { SalacctverifyPage } from '../pages/salacctverify/salacctverify';
+import { Camera } from '@ionic-native/camera';
+import { firebaseConfig } from './firebaseconfig';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { DataProvider } from '../providers/data/data';
 
-
-const firebaseAuth = {
+const firebaseAuthConfig = {
   apiKey: "AIzaSyBBuSxVcDmmAuZ4WhxEEyTkWSilfqbgKjE",
   authDomain: "mobileapp1-dc6ff.firebaseapp.com",
   databaseURL: "https://mobileapp1-dc6ff.firebaseio.com",
@@ -40,7 +44,6 @@ const firebaseAuth = {
   storageBucket: "mobileapp1-dc6ff.appspot.com",
   messagingSenderId: "658644714320"
 }
-
 @NgModule({
   declarations: [
     Digibank,
@@ -67,10 +70,12 @@ const firebaseAuth = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(Digibank),    
-    AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,    
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -101,8 +106,10 @@ const firebaseAuth = {
     SplashScreen,
     Firebase,
     FirebaseAuthentication,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MessageService
+    MessageService,
+    DataProvider
   ]
 })
 export class AppModule {}

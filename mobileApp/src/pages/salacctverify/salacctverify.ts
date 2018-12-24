@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SalacctverificationPage } from '../salacctverification/salacctverification';
 import { MessageService } from '../../providers/message-service/message-service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the SalacctverifyPage page.

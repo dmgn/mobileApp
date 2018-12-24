@@ -2,7 +2,9 @@ import { MessageService } from './../../providers/message-service/message-servic
 import { AppevaluationPage } from './../appevaluation/appevaluation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Observable } from 'rxjs';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+
 
 /**
  * Generated class for the AddrempverificationPage page.

@@ -34,7 +34,7 @@ export class StartPage {
 
   sendSMS(){
     console.log("Inside sendSMS");
-    /**
+  /**
     this.firebaseAuthentication.verifyPhoneNumber(this.phone.value, 60).
     then( (res: any)=>{
        alert("SMS sent successfully");

@@ -15,15 +15,36 @@
 
 <ion-content padding>
 
+  
+
+
+  
+
+
   <ion-list no-lines>
     <ion-item>
+      
       <div>
         <span style="float:left">Click your happy selfie!</span>
-        <span >
-          <!-- img src="../../../www/assets/imgs/logo.png"/ -->
+        <span>
+          <button ion-button style="display: flex;float:right" (click)="takePhoto()">Take picture</button>
         </span>
-      </div>
+      </div> 
+     
+      <ion-card *ngFor="let photo of photos; let id = index">
+        <img [src] = photo *ngIf= photo />
+        <ion-icon name="trash" class="deleteIcon" (click)="deletePhotoFromFirebase();deletePhoto(id)"></ion-icon>
+     </ion-card>
     </ion-item>
+
+    <ion-item>
+        <ion-card *ngFor="let file of files | async">
+            <ion-card-header>
+              {{ file.created | date:'medium' }}
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+
     <ion-item>
       <div>
         Scan and upload Emirates ID
@@ -31,15 +52,50 @@
     </ion-item>
     <ion-item>
         <div>    
-            <button ion-button style="float:left" disabled>Emirate ID</button>
+           <!-- <button ion-button style="float:left" [disabled]="!photos.length">Emirate ID</button>
+            -->
+            <ion-fab right bottom>
+                <button ion-fab color="primary" (click)="addFile()">
+                  <ion-icon name="cloud-upload"></ion-icon>
+                </button>
+            </ion-fab>
+              
         </div>
-        <div style="float:right">
-            <img src="../../../www/assets/imgs/logo.png">
-       </div>
+
+
+
+        <!--div style="float:right">
+            <img src="../../../assets/imgs/logo.png">
+       </div-->
+
+
+     <!--
+        <ion-card-content>
+     
+          <button ion-button block icon-left outline (click)="viewFile(file.url)">
+            <ion-icon name="eye"></ion-icon>
+            {{ file.fullPath }}
+          </button>
+     
+          <button ion-button block outline icon-left color="danger" (click)="deleteFile(file)">
+            <ion-icon name="trash"></ion-icon> Delete
+          </button>
+     
+        </ion-card-content>
+     -->
+     
+     <!--
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="addFile()">
+          <ion-icon name="cloud-upload"></ion-icon>
+        </button>
+      </ion-fab>
+    -->
+
     </ion-item>
     <ion-item>
         <div>    
-            <button ion-button style="display: flex;float:left" disabled>Expiry</button>
+            <button ion-button style="display: flex;float:left" [disabled]="!photos.length">Expiry</button>
         </div>
     </ion-item>
   </ion-list>
