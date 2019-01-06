@@ -15,13 +15,16 @@ import 'rxjs/Rx';
 export class DataProvider {
 
   private url : String;
+
+  private basePath = '/files';
+
   constructor(private db: AngularFireDatabase, private afStorage: AngularFireStorage) {
     console.log('Hello DataProvider Provider');
   }
 
   
-  getFiles() {
-    let ref = this.db.list('files');
+  getFiles(dir) {
+    let ref = this.db.list(dir);
     return ref.snapshotChanges().map(changes => {
       return changes.map(c =>
                               ({ key: c.payload.key,
@@ -33,6 +36,7 @@ export class DataProvider {
     });
   }
 
+ 
   uploadToStorage(information): AngularFireUploadTask {
     let newName = `${new Date().getTime()}.txt`;
  

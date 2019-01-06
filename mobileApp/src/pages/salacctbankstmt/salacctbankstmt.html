@@ -1,0 +1,101 @@
+<!--
+  Generated template for the SalacctbankstmtPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Salary Account Bank Statement</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item>
+      Scan and upload last 3 Salary account bank statements
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Statement Date</ion-label>
+      <ion-datetime pickerformat="MMM DD YYYY" displayformat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>   
+      <div *ngIf="bankStatement1FileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{bankStatement1FileProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:bankStatement1FileProgress.percentage+'%'}">
+            {{bankStatement1FileProgress.percentage}}%</div>
+      </div>
+      <label for="stmt1" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Bank Statement 1
+        <input id="stmt1" style="display:none" type="file" (change)="selectBankStatement1File($event)">
+      </label>
+      <span> {{ bankStatement1FileName }} </span>
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadBankStatement1File()" [disabled]="!selectedbankStatement1">
+          <ion-icon name="cloud-upload" ></ion-icon>
+        </button>          
+      </ion-fab>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Statement Date</ion-label>
+      <ion-datetime pickerformat="MMM DD YYYY" displayformat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>   
+      <div *ngIf="bankStatement2FileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{bankStatement2FileProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:bankStatement2FileProgress.percentage+'%'}">
+            {{bankStatement2FileProgress.percentage}}%</div>
+      </div>
+      <label for="stmt2" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Bank Statement 2
+        <input id="stmt2" style="display:none" type="file" (change)="selectBankStatement2File($event)">
+      </label>
+      <span> {{ bankStatement2FileName }} </span>
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadBankStatement2File()" [disabled]="!selectedbankStatement2">
+          <ion-icon name="cloud-upload" ></ion-icon>
+        </button>          
+      </ion-fab>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Statement Date</ion-label>
+      <ion-datetime pickerformat="MMM DD YYYY" displayformat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>   
+      <div *ngIf="bankStatement3FileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{bankStatement3FileProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:bankStatement3FileProgress.percentage+'%'}">
+            {{bankStatement3FileProgress.percentage}}%</div>
+      </div>
+      <label for="stmt3" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Bank Statement 3
+        <input id="stmt3" style="display:none" type="file" (change)="selectBankStatement3File($event)">
+      </label>
+      <span> {{ bankStatement3FileName }} </span>
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadBankStatement3File()" [disabled]="!selectedbankStatement3">
+          <ion-icon name="cloud-upload" ></ion-icon>
+        </button>          
+      </ion-fab>
+    </ion-item>
+
+    </ion-list>
+      <div>    
+        <button ion-button style="float:left">Back</button>
+        <button ion-button style="float:right" (click)="showAddrEmpVerification()">Next</button>
+     </div>
+</ion-content>

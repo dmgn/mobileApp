@@ -35,6 +35,9 @@ import { firebaseConfig } from './firebaseconfig';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { DataProvider } from '../providers/data/data';
+import { UploadFileServiceProvider } from '../providers/upload-file-service/upload-file-service';
+import { SalacctbankstmtPage } from '../pages/salacctbankstmt/salacctbankstmt';
+
 
 const firebaseAuthConfig = {
   apiKey: "AIzaSyBBuSxVcDmmAuZ4WhxEEyTkWSilfqbgKjE",
@@ -65,7 +68,8 @@ const firebaseAuthConfig = {
     SalacctconfirmationPage,
     InitemirepaymentPage,
     EmirepaymentsetupPage,
-    LoanfundedPage
+    LoanfundedPage,
+    SalacctbankstmtPage
   ],
   imports: [
     BrowserModule,
@@ -99,7 +103,8 @@ const firebaseAuthConfig = {
     SalacctconfirmationPage,
     InitemirepaymentPage,
     EmirepaymentsetupPage,
-    LoanfundedPage
+    LoanfundedPage,
+    SalacctbankstmtPage
   ],
   providers: [
     StatusBar,
@@ -109,7 +114,8 @@ const firebaseAuthConfig = {
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MessageService,
-    DataProvider
+    DataProvider,
+    UploadFileServiceProvider
   ]
 })
 export class AppModule {}

@@ -5,34 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Identity</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
-  
-
-
-  
-
-
   <ion-list no-lines>
     <ion-item>
-      
       <div>
         <span style="float:left">Click your happy selfie!</span>
         <span>
           <button ion-button style="display: flex;float:right" (click)="takePhoto()">Take picture</button>
         </span>
-      </div> 
-     
+      </div>      
       <ion-card *ngFor="let photo of photos; let id = index">
-        <img [src] = photo *ngIf= photo />
+        <img height="50" width="50" [src] = photo *ngIf= photo />
         <ion-icon name="trash" class="deleteIcon" (click)="deletePhotoFromFirebase();deletePhoto(id)"></ion-icon>
      </ion-card>
     </ion-item>
@@ -40,9 +28,9 @@
     <ion-item>
         <ion-card *ngFor="let file of files | async">
             <ion-card-header>
-              {{ file.created | date:'medium' }}
-        </ion-card-header>
-      </ion-card>
+              {{ file.name }}
+            </ion-card-header>
+        </ion-card>
     </ion-item>
 
     <ion-item>
@@ -50,54 +38,90 @@
         Scan and upload Emirates ID
       </div>
     </ion-item>
+
     <ion-item>
-        <div>    
-           <!-- <button ion-button style="float:left" [disabled]="!photos.length">Emirate ID</button>
-            -->
-            <ion-fab right bottom>
-                <button ion-fab color="primary" (click)="addFile()">
-                  <ion-icon name="cloud-upload"></ion-icon>
-                </button>
-            </ion-fab>
-              
+        <div *ngIf="currentFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{frontsidefileprogress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:frontsidefileprogress.percentage+'%'}">
+            {{frontsidefileprogress.percentage}}%</div>
         </div>
-
-
-
-        <!--div style="float:right">
-            <img src="../../../assets/imgs/logo.png">
-       </div-->
-
-
-     <!--
-        <ion-card-content>
-     
+        <label for="front" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Select Front Side 
+          <input id="front" style="display:none"  type="file" (change)="selectFrontFile($event)">
+        </label>
+        <span> {{ frontfileName }} </span>
+        <ion-fab right bottom>
+          <button ion-fab color="primary" (click)="uploadFrontFile()" [disabled]="!selectedFrontSideFile">
+            <ion-icon name="cloud-upload" ></ion-icon>
+          </button>          
+        </ion-fab>
+      <!--
+        <ion-card-content>     
           <button ion-button block icon-left outline (click)="viewFile(file.url)">
             <ion-icon name="eye"></ion-icon>
             {{ file.fullPath }}
-          </button>
-     
+          </button>     
           <button ion-button block outline icon-left color="danger" (click)="deleteFile(file)">
             <ion-icon name="trash"></ion-icon> Delete
-          </button>
-     
+          </button>     
         </ion-card-content>
-     -->
-     
-     <!--
       <ion-fab right bottom>
         <button ion-fab color="primary" (click)="addFile()">
           <ion-icon name="cloud-upload"></ion-icon>
         </button>
       </ion-fab>
     -->
-
     </ion-item>
+
+    <ion-item>
+      <div *ngIf="currentFileUpload" class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped"
+          role="progressbar" attr.aria-valuenow="{{backsidefileprogress.percentage}}"
+          aria-valuemin="0" aria-valuemax="100"
+          [ngStyle]="{width:backsidefileprogress.percentage+'%'}">
+          {{backsidefileprogress.percentage}}%</div>
+      </div>
+      <label for="back" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center">Select Back Side
+         <input id="back" style="display:none" type="file" (change)="selectBackFile($event)" >
+      </label>
+      <span> {{ backfileName }} </span>
+
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadBackFile()" [disabled]="!selectedBackSideFile">
+          <ion-icon name="cloud-upload"></ion-icon>
+        </button>
+      </ion-fab>
+    <!--
+      <ion-card-content>
+   
+        <button ion-button block icon-left outline (click)="viewFile(file.url)">
+          <ion-icon name="eye"></ion-icon>
+          {{ file.fullPath }}
+        </button>
+   
+        <button ion-button block outline icon-left color="danger" (click)="deleteFile(file)">
+          <ion-icon name="trash"></ion-icon> Delete
+        </button>
+   
+      </ion-card-content>
+   -->
+   
+   <!--
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="addFile()">
+        <ion-icon name="cloud-upload"></ion-icon>
+      </button>
+    </ion-fab>
+  -->
+    </ion-item>
+  <!--
     <ion-item>
         <div>    
             <button ion-button style="display: flex;float:left" [disabled]="!photos.length">Expiry</button>
         </div>
     </ion-item>
+  -->
   </ion-list>
    <div>    
         <button ion-button style="float:left">Cancel</button>

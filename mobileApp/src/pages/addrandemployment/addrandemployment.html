@@ -21,7 +21,7 @@
     </ion-item>
     <ion-item>
       <ion-label floating >Address 1</ion-label>
-      <ion-input type="text" value=""></ion-input>       
+      <ion-input type="text" value="" ></ion-input>       
     </ion-item>
     <ion-item>
       <ion-label floating >Address 2</ion-label>
@@ -32,21 +32,76 @@
       <ion-input type="text" value=""></ion-input>       
     </ion-item>
     <ion-item>
-      Scan and upload latest salary slip
+        <div *ngIf="addressProofFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{addressProofFileUploadProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:addressProofFileUploadProgress.percentage+'%'}">
+            {{addressProofFileUploadProgress.percentage}}%</div>
+        </div>
+        <label for="addrProof" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Address Proof 
+          <input id="addrProof" style="display:none" type="file" (change)="selectAddressProofFile($event)">
+        </label>
+        <span> {{ addressProofFileName }} </span>
+        <ion-fab right bottom>
+          <button ion-fab color="primary" (click)="uploadAddressProofFile()" [disabled]="!selectedAddressProofFile">
+            <ion-icon name="cloud-upload" ></ion-icon>
+          </button>          
+        </ion-fab>
     </ion-item>
     <ion-item>
-      <ion-label floating >Current Employer</ion-label>
-      <ion-input type="text" value=""></ion-input>       
+      Scan and upload last 2 salary slips
     </ion-item>
     <ion-item>
-      <ion-label floating >Date of joining</ion-label>
-      <ion-input type="text" value=""></ion-input>       
+      <ion-label floating >Salary Date</ion-label>
+      <ion-datetime pickerformat="MMM DD YYYY" displayformat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <div *ngIf="salarySlip1FileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{salarySlip1FileProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:salarySlip1FileProgress.percentage+'%'}">
+            {{salarySlip1FileProgress.percentage}}%</div>
+      </div>
+      <label for="sal1Proof" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Salary Slip
+        <input id="sal1Proof" style="display:none" type="file" (change)="selectSalarySlip1File($event)">
+      </label>
+      <span> {{ salarySlip1FileName }} </span>
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadSalarySlip1File()" [disabled]="!selectedSalarySlip1File">
+          <ion-icon name="cloud-upload" ></ion-icon>
+        </button>          
+      </ion-fab>
+    </ion-item>
+    <ion-item>
+      <ion-label floating >Salary Date</ion-label>
+      <ion-datetime pickerformat="MMM DD YYYY" displayformat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>   
+      <div *ngIf="salarySlip2FileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{salarySlip2FileProgress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:salarySlip2FileProgress.percentage+'%'}">
+            {{salarySlip2FileProgress.percentage}}%</div>
+      </div>
+      <label for="sal2Proof" class="item-button button button-md button-default button-default-md" style="float:left; display:flex;align-items:center" >Upload Salary Slip
+        <input id="sal2Proof" style="display:none" type="file" (change)="selectSalarySlip2File($event)">
+      </label>
+      <span> {{ salarySlip2FileName }} </span>
+      <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="uploadSalarySlip2File()" [disabled]="!selectedSalarySlip2File">
+          <ion-icon name="cloud-upload" ></ion-icon>
+        </button>          
+      </ion-fab>
     </ion-item>
 
   </ion-list>
       <div>    
         <button ion-button style="float:left">Back</button>
-        <button ion-button style="float:right" (click)="showAddrEmpVerification()">Next</button>
+        <button ion-button style="float:right" (click)="showSalAcctBankStmtPage()">Next</button>
      </div>
 
 
